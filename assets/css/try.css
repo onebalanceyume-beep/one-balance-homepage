@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/* CSS Document */
+.beginner {
+  width: 90%;
+  margin-top: 60px;
+}
+.try-30 {
+  width: 80%;
+  margin: 40px 0;
+}
+.try-box {
+  background-color: #5ad0e8;
+  padding: 30px 0;
+  margin-top: 60px;
+}
+.try {
+  margin: 30px 0;
+}
+.bring {
+  margin: 70px 0;
+}
+.true {
+  width: 90%;
+  margin-top: 150px;
+}
+.dokidoki {
+  width: 60%;
+  margin-left: 140px;
+}
+.voice {
+  margin: 30px 0;
+}

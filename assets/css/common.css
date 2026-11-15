@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* CSS Document */
+html {
+  font-size: 62.5%; /* 16px * 62.5% = 10px */
+  width: 100%;
+}
+body {
+  color: #333; /* RGB */
+  font-weight: 500;
+  text-align: center;
+  font-size: 1.6rem;
+  min-width: 0;
+  max-width: 640px;
+  margin: 0 auto;
+  font-family: "arial unicode ms", "arial", sans-serif;
+}
+img {
+  width: 100%;
+}
+.f-1 {
+  width: 100%;
+}
+.fotter-box1 {
+  position: relative;
+  top: 90px;
+}
+.fotter-box2 {
+  z-index: 100;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  list-style: none;
+}
+.fotter-box2 img {
+  height: 12px;
+  width: auto;
+  display: block;
+  margin: 8px 0 0 20px;
+}
+@media screen and (max-width:375px){
+.fotter-box2 {
+  top: 24px;
+  left: 16px;
+}
+.fotter-box2 img {
+  height: 12px;
+  margin: 10px 0 0 20px;
+}
+}
+@media screen and (min-width:640px){
+  .fotter-box2{
+    top: 40px;
+    left: 40px;
+  }
+  .fotter-box2 img{
+    height: 20px;
+    margin: 14px 0 0 20px;
+  }
+}

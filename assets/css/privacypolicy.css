@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/* CSS Document */
+h1 {
+  font-size: 22px;
+  margin-top: 60px;
+}
+.privacy-policy {
+  text-align: left;
+  margin: 40px 20px;
+  line-height: 20px;
+}
+.privacy-policy_access-container {
+  text-align: left;
+  margin: 60px 20px;
+  line-height: 24px;
+}

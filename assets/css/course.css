@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.backcolor{
+  background-color: #f4efdb;
+  position: relative;
+  top: 10px;
+}
+.course{
+  margin: 30px 0;
+}
+.practice{
+  margin: 30px 0;
+}

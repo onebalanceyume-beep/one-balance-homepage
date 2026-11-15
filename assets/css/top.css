@@ -1,0 +1,180 @@
+@charset "UTF-8";
+/* CSS Document */
+.top-main{
+  position: relative;
+  left: 0;
+}
+.catchphrase{
+  width: 80%;
+}
+.no-player {
+  width: 50%;
+  margin: 40px 0 60px 150px;
+}
+.top-main p {
+  text-align: left;
+  font-size: 1.4rem;
+  margin-left: 20px;
+  line-height: 1.5;
+}
+.top-course {
+  background-color: #ff424e;
+  margin: 200px 0 30px 0;
+}
+.course-3 {
+  width: 40%;
+  margin: 40px 180px 30px 50px;
+}
+.a-little {
+  width: 80%;
+  margin: 60px 20px 40px 50px;
+}
+.top-good {
+  background-color: #5ad0e8;
+  margin-top: 140px;
+  padding-top: 80px;
+}
+.goodpoint {
+  width: 50%;
+  margin-bottom: 80px;
+}
+.nagao1 {
+  width: 20%;
+  margin-top: 300px;
+}
+.inata1 {
+  width: 20%;
+  margin-top: 300px;
+}
+.good-a {
+  margin-top: 50px;
+}
+
+.good-b {
+  margin-top: -30px;
+}
+
+.good-sns {
+  width: 80%;
+  margin: 80px 0 50px 0;
+}
+.sns-box {
+  display: flex;
+  margin: 0 50px;
+  padding-bottom: 80px;
+}
+.sns{
+  margin: 0 20px;
+  width: 80%;
+}
+.lets-try {
+  width: 50%;
+  margin: 100px 0 80px 0;
+}
+.try-button1{
+  width: 80%;
+  margin-bottom: 20px;
+}
+.try-button2{
+  width: 80%;
+  margin-bottom: 100px;
+}
+.look {
+  width: 70%;
+}
+.look-button {
+  width: 75%;
+  margin-bottom: 80px;
+}
+.try-visit{
+  width: 75%;
+}
+.top-price {
+  margin: 50px 0;
+  width: 95%;
+}
+.join{
+  width: 80%;
+  margin: 30px 0;
+}
+.top-qa{
+  margin-top: 120px;
+}
+.tel{
+  width: 80%;
+  margin: 100px 0 40px 0;
+}
+.address{
+  width: 80%;
+}
+.business-hours{
+  width: 80%;
+  margin: 10px 0 50px 0;
+}
+.parking{
+  width: 95%;
+  margin-bottom: 60px;
+}
+.trainer{
+  background-color: #f4efdb;
+}
+.message{
+  width: 80%;
+  margin-top: 80px;
+  display: block;
+  justify-content: center;
+  padding-top: 80px;
+}
+.inata-3{
+  width: 15%;
+}
+.trainer-pic{
+  width: 60%;
+}
+.nagao3{
+  width: 15%;
+}
+.achievements{
+  width: 90%;
+  margin: 80px 0 60px 0;
+}
+.parking{
+  margin: 30px 0;
+}
+@media screen and (max-width:375px){
+  .top-main p{
+    font-size: 1.2rem;
+  }
+
+  .course-3{
+    margin: 40px 150px 30px 50px;
+  }
+  .a-little{
+    widows: 70%;
+    margin: 60px 10px 40px 50px;
+  }
+  .top-course{
+    margin: 100px 0 30px 0;
+  }
+}
+@media screen and (min-width:640px){
+  .top-main p{
+    font-size: 1.8rem;
+    line-height: 1.8;
+    margin-top: 60px;
+  }
+  .course-3{
+    margin: 100px 200px 60px 50px;
+  }
+  .a-little{
+    margin: 60px 10px 100px 70px;
+  }
+  .goodpoint{
+    margin-top: 100px;
+    margin-bottom: 200px;
+  }
+  .sns{
+    width: 100%;
+    margin: 0 44px;
+  }
+}
