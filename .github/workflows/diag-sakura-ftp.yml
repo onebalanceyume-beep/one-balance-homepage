@@ -12,5 +12,5 @@ jobs:
         run: |
           echo "--- DNS"; getent hosts "$H" | sed 's/[0-9a-z.-]*sakura[0-9a-z.-]*/HOST/' || true
           echo "--- 平文FTPの挨拶(21)"; (printf 'QUIT\r\n'; sleep 3) | timeout 8 nc "$H" 21 | head -3 | sed "s/$H/HOST/g" || true
-          echo "--- curl 明示的TLS"; curl -sv --ftp-ssl --ssl-reqd --max-time 20 --user "$U:$P" "ftp://$H/" -o /dev/null 2>&1 | sed "s/$H/HOST/g;s/$U/USER/g" | grep -Ev "^\*   (CAfile|CApath)" | head -40 || true
+          echo "--- curl 明示的TLS"; curl -sv --ftp-ssl --ssl-reqd --max-time 20 --user "$U:$P" "ftp://$H/" -o /dev/null 2>&1 | sed "s/$H/HOST/g;s/$U/USER/g" | grep -Ev "^\*   (CAfile|CApath)" | tail -25 || true
           echo "--- curl 平文"; curl -sv --max-time 20 --user "$U:$P" "ftp://$H/" -o /dev/null 2>&1 | sed "s/$H/HOST/g;s/$U/USER/g" | head -20 || true
