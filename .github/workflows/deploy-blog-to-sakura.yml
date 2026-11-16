@@ -1,0 +1,39 @@
+# ワンバランスのブログを、さくらのサーバー（one-balance.jp）へ自動で送る
+# 送るのは blog/ と sitemap.xml と robots.txt だけ（トップや他のページには触らない）
+name: ブログをさくらへ自動アップロード
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "blog/**"
+      - "sitemap.xml"
+      - "robots.txt"
+      - ".github/workflows/deploy-blog-to-sakura.yml"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 送るファイルだけをまとめる
+        run: |
+          mkdir -p _deploy
+          cp -r blog _deploy/blog
+          cp sitemap.xml _deploy/sitemap.xml
+          cp robots.txt _deploy/robots.txt
+
+      - name: さくらへアップロード（FTPS）
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.SAKURA_FTP_SERVER }}
+          username: ${{ secrets.SAKURA_FTP_USER }}
+          password: ${{ secrets.SAKURA_FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./_deploy/
+          server-dir: www/onebalance/
+          state-name: .ftp-deploy-sync-state-blog.json
+          dangerous-clean-slate: false
