@@ -134,6 +134,20 @@
 .nagao3{
   width: 15%;
 }
+.inata-g{
+  width: 62%;
+  display: block;
+  margin: 30px auto 0 20px;
+}
+.navi-link{
+  display: block;
+  width: 88%;
+  margin: 10px auto 24px;
+}
+.navi-link img{
+  display: block;
+  width: 100%;
+}
 .achievements{
   width: 90%;
   margin: 80px 0 60px 0;
