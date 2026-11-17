@@ -23,6 +23,9 @@ on:
       - "assets/pic/trainer/inata-g.png"
       - "assets/pic/TOP/fitness-boxing-gym.png"
       - "assets/pic/TOP/top-man.png"
+      - "assets/pic/TOP/top-3a.png"
+      - "assets/pic/TOP/top-3b.png"
+      - "assets/pic/TOP/q&a-long.png"
       - "assets/pic/TOP/top-gym.png"
       - ".github/workflows/deploy-hp-to-sakura.yml"
   workflow_dispatch:
@@ -45,7 +48,7 @@ jobs:
       - name: 送るファイルだけをまとめる
         run: |
           mkdir -p _deploy/assets/css _deploy/assets/js _deploy/assets/fonts _deploy/assets/pic/TOP _deploy/assets/pic/trainer
-          for f in index.html standard.html free.html sparring.html try.html assets/css/top.css assets/js/header.js assets/pic/TOP/light-boxing.png assets/pic/TOP/fotter14.png assets/pic/TOP/fitness-boxing-gym.png assets/pic/TOP/top-man.png assets/pic/TOP/top-gym.png assets/pic/TOP/navi-button.png assets/pic/trainer/inata-g.png assets/pic/TOP/daihyo.jpg assets/fonts/RiiCookieRt.otf; do
+          for f in index.html standard.html free.html sparring.html try.html assets/css/top.css assets/js/header.js assets/pic/TOP/light-boxing.png assets/pic/TOP/fotter14.png assets/pic/TOP/fitness-boxing-gym.png assets/pic/TOP/top-man.png assets/pic/TOP/top-3a.png assets/pic/TOP/top-3b.png assets/pic/TOP/q&a-long.png assets/pic/TOP/top-gym.png assets/pic/TOP/navi-button.png assets/pic/trainer/inata-g.png assets/pic/TOP/daihyo.jpg assets/fonts/RiiCookieRt.otf; do
             if [ -f "$f" ]; then cp "$f" "_deploy/$f"; fi
           done
           ls -R _deploy
