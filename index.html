@@ -81,6 +81,43 @@
 .hero-slider .hs-slide{flex:0 0 100%;width:100%;height:100%}
 .hero-slider .hs-slide img{display:block;width:100%;height:100%;object-fit:cover}
 </style>
+<style>
+@font-face{font-family:"RiiCookie";src:url("assets/fonts/RiiCookieRt.otf?v=20261117") format("opentype");font-display:swap}
+/* YouTube最新動画 */
+.yt-sec{background:#5ad0e8;padding:44px 0 48px;margin-top:0;font-family:"RiiCookie","Noto Sans JP",sans-serif}
+.yt-sec h2{font-size:3rem;line-height:1.4;color:#fff;font-weight:400;margin:0 12px 10px;letter-spacing:1px}
+.yt-sec h2 b{font-weight:400;color:#ff424e;background:#fff;border-radius:14px;padding:0 10px;display:inline-block}
+.yt-sec .yt-lead{font-size:1.5rem;line-height:1.8;color:#fff;margin:12px 24px 20px}
+.yt-box{margin:0 16px;background:#fff;border-radius:28px;padding:14px 14px 20px}
+.yt-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#222}
+.yt-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt-btn{display:block;margin:14px 10px 0;background:#ff424e;color:#fff;border-radius:40px;font-size:1.9rem;padding:13px 0;text-decoration:none}
+.yt-btn.o{background:#fff;color:#ff424e;border:3px solid #ff424e;padding:10px 0}
+/* 代表の想い */
+.msg-sec{background:#f4efdb;padding:44px 0 48px;font-family:"RiiCookie","Noto Sans JP",sans-serif;color:#555}
+.msg-sec .nt{font-family:"Noto Sans JP",sans-serif;font-weight:700}
+.msg-sec h2{font-size:3.4rem;color:#ff424e;font-weight:400;letter-spacing:2px;margin:0 0 4px}
+.msg-sec .en{font-size:1.4rem;color:#5ad0e8;letter-spacing:3px;margin-bottom:18px}
+.msg-photo{width:64%;max-width:280px;margin:0 auto 10px;padding:8px;border:5px dotted #5ad0e8;border-radius:34px;background:#fff;box-sizing:border-box}
+.msg-photo img{display:block;width:100%;border-radius:24px}
+.msg-name{font-size:1.7rem;color:#747474;margin-bottom:22px}
+.msg-rinen{margin:0 18px 18px;background:#fff;border-radius:28px;border:4px solid #ff424e;padding:22px 16px 20px}
+.msg-tag{display:inline-block;background:#ff424e;color:#fff;font-size:1.5rem;letter-spacing:3px;border-radius:20px;padding:3px 18px;margin-bottom:12px}
+.msg-tag.c{background:#5ad0e8}
+.msg-rb{font-size:2.5rem;line-height:1.5;color:#333}
+.msg-rb b{font-weight:400;color:#ff424e}.msg-rb i{font-style:normal;color:#5ad0e8}
+.msg-ex{margin-top:16px;text-align:left}
+.msg-row{display:flex;gap:10px;margin-top:12px;align-items:flex-start}
+.msg-n{flex:0 0 30px;height:30px;border-radius:50%;background:#ff424e;color:#fff;font-size:1.5rem;line-height:30px;text-align:center}
+.msg-n.c{background:#5ad0e8}
+.msg-vt{font-size:1.8rem;color:#333;line-height:1.4}
+.msg-vp{font-size:1.4rem;line-height:1.7;color:#555}
+.msg-card{margin:0 18px 16px;background:#fff;border-radius:26px;padding:22px 18px 20px;border:3px dotted #d9d2b8;text-align:left}
+.msg-t{font-size:2.3rem;line-height:1.35;color:#333;margin:2px 0 8px}
+.msg-p{font-size:1.45rem;line-height:1.75;color:#555}
+.msg-end{margin:6px 18px 0;background:#ff424e;border-radius:26px;padding:20px;color:#fff;font-size:1.5rem;line-height:1.85;text-align:left}
+.msg-end .s{display:block;text-align:right;margin-top:6px;font-size:1.4rem}
+</style>
 </head>
 
 <body>
@@ -139,9 +176,31 @@
 <section id="top-good"  class="top-good"> <img class="nagao1" src="assets/pic/TOP/nagao1.png" alt="長尾儀弘"> <img class="goodpoint" src="assets/pic/TOP/goodpoint.png" alt="もっと知ってほしいワンバランスのいいところ。"> <img class="inata1" src="assets/pic/TOP/inata1.png" alt="稲田大地"> <img class="good-a" src="assets/pic/TOP/good1.png" alt="リングに上がると気分が上がります！"> <img class="good-a" src="assets/pic/TOP/good2.png" alt="ストレス発散はやっぱりこれ！"> <img  class="good-a" src="assets/pic/TOP/good3.png" alt="ボクシングに必要な筋肉を鍛えれます！"> <img class="good-b" src="assets/pic/TOP/good4.png" alt="足、お尻を鍛えるマシンでしっかりした下半身を鍛えれます。"> <img class="good-a" src="assets/pic/TOP/good5.png" alt="運動終わりに汗流せます！"> <img  class="good-b" src="assets/pic/TOP/good6.png" alt="YouTube大人気すぎてヤバい！笑"> <img  class="good-sns" src="assets/pic/TOP/sns.png" alt="ワンバランスの日々の様子はSNSにて配信中！">
   <div class="sns-box"> <a href="https://m.facebook.com/one.balance.boxing.gym/?locale2=ja_JP"><img   class="sns" src="assets/pic/TOP/icon/facebook.png" alt="facebook"></a> <a href="https://www.instagram.com/one.balance.yume/?igshid=YmMyMTA2M2Y%3D"><img class="sns" src="assets/pic/TOP/icon/instagram.png" alt="instagram"> </a> <a href="https://www.youtube.com/@%E3%83%AF%E3%83%B3%E3%83%90%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%9C%E3%82%AF%E3%82%B7%E3%83%B3%E3%82%B0%E3%82%B8%E3%83%A0"><img class="sns" src="assets/pic/TOP/icon/youtube.png" alt="youtube"> </a></div>
 </section>
+<section class="yt-sec" id="youtube">
+<h2>大人になって<br>始めた人でも<br><b>できる</b>ボクシング</h2>
+<p class="yt-lead">ワンバランスのYouTubeでは、大人から始めた方でもできる技術を、しょうかいしています。</p>
+<div class="yt-box"><div class="yt-frame"><iframe src="https://www.youtube.com/embed/videoseries?list=UULFV8rLWSD4doN8OvCaVp-ygg" title="ワンバランスボクシングジムの最新動画" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+<a class="yt-btn" href="https://www.youtube.com/channel/UCV8rLWSD4doN8OvCaVp-ygg?sub_confirmation=1" target="_blank" rel="noopener">チャンネル登録はこちら</a>
+<a class="yt-btn o" href="https://www.youtube.com/channel/UCV8rLWSD4doN8OvCaVp-ygg" target="_blank" rel="noopener">YouTubeでもっと見る</a></div>
+</section>
 <section id="trial"> <img class="lets-try" src="assets/pic/TOP/lets-try.png" alt="どう？結構ワンバランスについて気になってきた？とりあえず体験予約してみない？"> <a href="https://onebalanceyume-beep.github.io/onebalance-member/onebalance-v9.html?menu=boxing"><img  class="try-button2" src="assets/pic/TOP/try-button2.png" alt="ボクシングの体験予約する"></a> <a href="https://onebalanceyume-beep.github.io/onebalance-member/onebalance-v9.html?menu=kick"><img  class="try-button1" src="assets/pic/TOP/try-button1.png" alt="キックエクササイズの体験予約する"></a> <img  class="look" src="assets/pic/TOP/look.png" alt="いやいやいや！体験って何するの？なんかドキドキするわ！って思うよね。そんな方は、ちょっとここのぞいてみて！"><a href="try.html"> <img class="look-button" src="assets/pic/TOP/look-button.png" alt="体験内容公開中"> </a> <img class="try-visit" src="assets/pic/TOP/try-visit.png" alt="いきなり体験はハードル高いわ！って思っちゃった？まずは見学からでも大丈夫！雰囲気を見てから体験してみない？"><a href="https://onebalanceyume-beep.github.io/onebalance-member/onebalance-v9.html?menu=tour"><img class="look-button" src="assets/pic/TOP/visit.png" alt="見学予約する"></a> </section>
 <section id="price"> <img src="assets/pic/TOP/together.png" alt="入会金いっしょ割 通常価格8,800円の入会金が、3人いっしょなら1人あたり0円、2人いっしょなら1人あたり4,400円"> <img class="top-price" src="assets/pic/TOP/price.png" alt="月会費（税込） キックエクササイズ：いつでも利用可能 男性7,260円・女性6,380円、週1 4,620円／ボクシング：いつでも利用可能 男性7,260円・女性6,380円、週1 4,620円／スパーリングボクシング：いつでも利用可能 男性7,810円・女性6,930円、週1 4,950円。週1コースは曜日を2つ決めていただき、どちらか1回利用可能です。"><a href="https://onebalanceyume-beep.github.io/onebalance-member/onebalance-v9.html?menu=join"><img class="join" src="assets/pic/TOP/join.png" alt="入会予約する"> </a></section>
 <section id="trainer" class="trainer"> <img class="message" src="assets/pic/trainer/punch2.png" alt="待ってます"> <img class="inata-3" src="assets/pic/trainer/inata.png" alt="トレーナー 稲田大地"> <img class="trainer-pic" src="assets/pic/trainer/inata-nagao.png" alt="ワンバランスボクシングジムのトレーナー 稲田大地・長尾儀弘"> <img class="nagao3" src="assets/pic/trainer/nagao.png" alt="トレーナー 長尾儀弘"> <img class="inata-g" src="assets/pic/trainer/inata-g.png" alt="稲田大地は通称G。Gって呼んでね！"> <img class="achievements" src="assets/pic/trainer/Achievements.png" alt="トレーナーの大会実績 2005年 全日本実業団ボクシング選手権 バンタム級 優勝／2006年 全日本実業団ボクシング選手権 フェザー級 優勝＆MVP（2階級制覇）／2006年 全日本社会人選手権 バンタム級 優勝／2007年 全日本実業団ボクシング選手権 ライト級 優勝＆MVP（3階級制覇・大会初）／2012年・2013年 全国高校総体 ライトウェルター級 出場／2013年 全国高校総体 中国大会 ライトウェルター級 準優勝"> </section>
+<section class="msg-sec" id="message">
+<h2>代表の想い</h2><div class="en">MESSAGE</div>
+<div class="msg-photo"><img src="assets/pic/TOP/daihyo.jpg" alt="ワンバランスボクシングジム代表 長尾儀弘"></div>
+<div class="msg-name">ワンバランスボクシングジム 代表　<span class="nt">長尾 儀弘</span></div>
+<div class="msg-rinen"><span class="msg-tag">理念</span>
+<div class="msg-rb"><b>心と体を元気に。</b><br><i>カッコよく素敵に。</i></div>
+<div class="msg-ex">
+<div class="msg-row"><div class="msg-n">1</div><div><div class="msg-vt">まずは、心と体を元気に</div><div class="msg-vp">人にとって、いちばん大事なこと。元気な心と体が、すべての土台だと思っています。</div></div></div>
+<div class="msg-row"><div class="msg-n c">2</div><div><div class="msg-vt">そこから、カッコよく素敵に</div><div class="msg-vp">元気になったその先で、自分らしくカッコよく素敵になっていく。それが自己実現です。</div></div></div>
+<div class="msg-row"><div class="msg-n">3</div><div><div class="msg-vt">ボクシングを通して、自己実現を</div><div class="msg-vp">私自身も、ジムに来てくれるみなさんも。ボクシングを通して、この理念を自己実現していきたいと思います。</div></div></div>
+</div></div>
+<div class="msg-card"><span class="msg-tag c">VISION</span><div class="msg-t">日本一、始めやすい<br>ボクシングジム</div><div class="msg-p">鳥取から、日本一へ。初めてでも、運動が久しぶりでも、ボクシングの最初の一歩を出せる場所をつくります。</div></div>
+<div class="msg-card"><span class="msg-tag">MISSION</span><div class="msg-t">ボクシング革命</div><div class="msg-p">「ボクシングは、きつい・つらい」を「楽しい」に変える。ボクシングの常識を変えていきます。</div></div>
+<div class="msg-end">選手を育てるジムではありません。<br>「ボクシングやってみたかった」を、みんなが気軽にできる場所。<br>その第一歩を、いつでも待っています。<span class="s">代表　<span class="nt">長尾 儀弘</span></span></div>
+</section>
 <section  id="top-qa"  class="top-qa"> <img src="assets/pic/TOP/q&a.png" alt="よくある質問"> <img src="assets/pic/TOP/q&a-long.png" alt="Q 動く時の服装は？ A 自分の動きやすい格好だったらなんでもOKです！ Q どのぐらいの時間ボクシングをしますか？ A 大体1〜2時間ぐらいされている方が多いです。でも体力は人それぞれなので自分にあったペースでOKです！ Q コースはとちゅうで変えれますか？ A 出来ますが、事務手数料がかかります。1件、1,650円（税こみ）になります。"> </section>
 <section id="top-contact"> <a href="tel:0859495275"><img class="tel" src="assets/pic/TOP/tel.png" alt="電話番号 0859-49-5275"></a> <img class="address" src="assets/pic/TOP/address.png" alt="住所 〒683-0006 鳥取県米子市車尾6丁目8-59"> <img class="business-hours" src="assets/pic/TOP/business-hours.png" alt="営業時間 月〜金 16:00-22:00 土 16:00-20:00 日・祝 定休日 ※最終受付はCLOSEの30分前までにお願いします。"> <a class="navi-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=%E3%83%AF%E3%83%B3%E3%83%90%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%9C%E3%82%AF%E3%82%B7%E3%83%B3%E3%82%B0%E3%82%B8%E3%83%A0+%E9%B3%A5%E5%8F%96%E7%9C%8C%E7%B1%B3%E5%AD%90%E5%B8%82%E8%BB%8A%E5%B0%BE6%E4%B8%81%E7%9B%AE8-59&amp;travelmode=driving" target="_blank" rel="noopener"><img src="assets/pic/TOP/navi-button.png" alt="Googleマップでナビ開始（ワンバランスボクシングジムまで車で道案内）"></a> <img  src="assets/pic/TOP/map.png" alt="アクセス地図（日野川の土手沿い・旧日野橋の近く）"> <img class="parking" src="assets/pic/TOP/parking.png" alt="駐車場の案内（施設正面から見て右側が入口）"> </section>
 <fotter>
