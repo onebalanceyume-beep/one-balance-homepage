@@ -165,13 +165,13 @@
   </div>
 </fotter>
 <script>
-/* トップ写真：4秒に1回、右から左へスライド（最後まで行ったら最初に戻って繰り返す） */
+/* トップ写真：3秒に1回、右から左へスライド（最後まで行ったら最初に戻って繰り返す） */
 (function(){var t=document.getElementById('heroTrack');if(!t)return;
 var n=t.children.length-1,i=0,busy=false;
 if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 function go(){if(busy)return;busy=true;i++;t.style.transition='transform 0.7s ease';t.style.transform='translateX(-'+(i*100)+'%)';}
 t.addEventListener('transitionend',function(){busy=false;if(i>=n){i=0;t.style.transition='none';t.style.transform='translateX(0)';}});
-setInterval(go,4000);})();
+setInterval(go,3000);})();
 </script>
 <script src="assets/js/header.js"></script>
 </body>
