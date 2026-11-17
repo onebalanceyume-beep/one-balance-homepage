@@ -1,0 +1,56 @@
+# ワンバランスHPのトップ・各コースページ・画像を、さくらのサーバー（one-balance.jp）へ自動で送る
+# 通常: 下の「送るファイル」を変更してmainに送ると自動でアップされる
+# 元に戻すとき: GitHubの Actions →「HPをさくらへ自動アップロード」→ Run workflow → mode に rollback を選ぶ
+#   （2026/11/17 公開前の状態 18a8e965d9f2ef39ec06ce61724144e412968be2 に戻る）
+name: HPをさくらへ自動アップロード
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "standard.html"
+      - "free.html"
+      - "sparring.html"
+      - "try.html"
+      - "assets/css/top.css"
+      - "assets/pic/TOP/light-boxing.png"
+      - "assets/pic/TOP/fotter14.png"
+      - ".github/workflows/deploy-hp-to-sakura.yml"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "deploy=今の内容をアップ / rollback=2026/11/17の公開前に戻す"
+        required: true
+        default: deploy
+        type: choice
+        options: [deploy, rollback]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.mode == 'rollback' && '18a8e965d9f2ef39ec06ce61724144e412968be2' || github.ref }}
+
+      - name: 送るファイルだけをまとめる
+        run: |
+          mkdir -p _deploy/assets/css _deploy/assets/pic/TOP
+          for f in index.html standard.html free.html sparring.html try.html assets/css/top.css assets/pic/TOP/light-boxing.png assets/pic/TOP/fotter14.png; do
+            if [ -f "$f" ]; then cp "$f" "_deploy/$f"; fi
+          done
+          ls -R _deploy
+
+      - name: さくらへアップロード（FTPS）
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.SAKURA_FTP_SERVER }}
+          username: ${{ secrets.SAKURA_FTP_USER }}
+          password: ${{ secrets.SAKURA_FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./_deploy/
+          server-dir: www/onebalance/
+          state-name: .ftp-deploy-sync-state-hp.json
+          dangerous-clean-slate: false
