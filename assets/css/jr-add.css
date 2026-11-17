@@ -1,0 +1,4 @@
+@charset "UTF-8";
+/* ジュニア追加(2026/11/18)：スクロールしてもヘッダー(3本線・ロゴ・体験ボタン)が上に付いてくる／メニュー項目が1つ増えた分の高さ */
+.header{position:-webkit-sticky;position:sticky;top:0;z-index:1000}
+nav .header-nav{height:575px}

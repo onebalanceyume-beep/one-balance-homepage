@@ -13,6 +13,11 @@ on:
       - "free.html"
       - "sparring.html"
       - "try.html"
+      - "privacypolicy.html"
+      - "kids/**"
+      - "assets/css/jr-add.css"
+      - "assets/pic/TOP/fotter15.png"
+      - "assets/pic/TOP/jr-banner.png"
       - "assets/css/top.css"
       - "assets/pic/TOP/light-boxing.png"
       - "assets/pic/TOP/fotter14.png"
@@ -32,11 +37,11 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "deploy=今の内容をアップ / rollback=2026/11/17の公開前に戻す"
+        description: "deploy=今の内容をアップ / rollback-jr=ジュニア追加の直前(2026/11/18)に戻す / rollback=2026/11/17の公開前に戻す"
         required: true
         default: deploy
         type: choice
-        options: [deploy, rollback]
+        options: [deploy, rollback-jr, rollback]
 
 jobs:
   deploy:
@@ -44,14 +49,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.inputs.mode == 'rollback' && '18a8e965d9f2ef39ec06ce61724144e412968be2' || github.ref }}
+          ref: ${{ github.event.inputs.mode == 'rollback' && '18a8e965d9f2ef39ec06ce61724144e412968be2' || github.event.inputs.mode == 'rollback-jr' && 'd844029' || github.ref }}
 
       - name: 送るファイルだけをまとめる
         run: |
           mkdir -p _deploy/assets/css _deploy/assets/js _deploy/assets/fonts _deploy/assets/pic/TOP _deploy/assets/pic/trainer
-          for f in index.html standard.html free.html sparring.html try.html assets/css/top.css assets/js/header.js assets/pic/TOP/light-boxing.png assets/pic/TOP/fotter14.png assets/pic/TOP/fitness-boxing-gym.png assets/pic/TOP/top-man.png assets/pic/TOP/top.png assets/pic/TOP/top-3a.png assets/pic/TOP/top-3b.png 'assets/pic/TOP/q&a-long.png' assets/pic/TOP/top-gym.png assets/pic/TOP/navi-button.png assets/pic/trainer/inata-g.png assets/pic/TOP/daihyo.jpg assets/fonts/RiiCookieRt.otf; do
+          for f in index.html standard.html free.html sparring.html try.html privacypolicy.html assets/css/jr-add.css assets/pic/TOP/fotter15.png assets/pic/TOP/jr-banner.png assets/css/top.css assets/js/header.js assets/pic/TOP/light-boxing.png assets/pic/TOP/fotter14.png assets/pic/TOP/fitness-boxing-gym.png assets/pic/TOP/top-man.png assets/pic/TOP/top.png assets/pic/TOP/top-3a.png assets/pic/TOP/top-3b.png 'assets/pic/TOP/q&a-long.png' assets/pic/TOP/top-gym.png assets/pic/TOP/navi-button.png assets/pic/trainer/inata-g.png assets/pic/TOP/daihyo.jpg assets/fonts/RiiCookieRt.otf; do
             if [ -f "$f" ]; then cp "$f" "_deploy/$f"; fi
           done
+          if [ -d kids ]; then cp -r kids _deploy/kids; fi
           ls -R _deploy
 
       - name: さくらへアップロード（FTPS）
