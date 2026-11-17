@@ -7,25 +7,6 @@
 .catchphrase{
   width: 80%;
 }
-/* トップ写真スライド（女性→男性→女性→男性→ジムを繰り返し） */
-.hero-slider{
-  position: relative;
-  width: 100%;
-  aspect-ratio: 681 / 679;
-  margin: 0;
-}
-.hero-slider .hs-img{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-.hero-slider .hs-img.on{
-  opacity: 1;
-}
 .no-player {
   width: 50%;
   margin: 40px 0 60px 150px;

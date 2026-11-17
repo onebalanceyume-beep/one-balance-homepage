@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="assets/css/reset.css">
 <link rel="stylesheet" href="assets/css/common.css">
 <link rel="stylesheet" href="assets/css/header.css">
-<link rel="stylesheet" href="assets/css/top.css">
+<link rel="stylesheet" href="assets/css/top.css?v=20261117">
 <link rel="stylesheet" href="assets/slick/slick.css">
 <link rel="stylesheet" href="assets/slick/slick-theme.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,6 +74,13 @@
   ]
 }
 </script>
+<style>
+/* トップ写真スライド：右から左へ流れる（古いCSSキャッシュが残っていても崩れないようここに書く） */
+.hero-slider{position:relative;width:100%;aspect-ratio:681/679;margin:0;overflow:hidden}
+.hero-slider .hs-track{display:flex;width:100%;height:100%;will-change:transform}
+.hero-slider .hs-slide{flex:0 0 100%;width:100%;height:100%}
+.hero-slider .hs-slide img{display:block;width:100%;height:100%;object-fit:cover}
+</style>
 </head>
 
 <body>
@@ -102,7 +109,7 @@
     </div>
   </nav>
 </header>
-<section id="top-main" class="top-main"> <img class="catchphrase" src="assets/pic/TOP/fitness-boxing-gym.png" alt="米子市のフィットネスボクシングジム"><h1 class="hero-slider" id="heroSlider"><img class="hs-img on" src="assets/pic/TOP/top.png" alt="米子市のボクシングジム ワンバランスボクシングジム 女性会員のミット打ち"><img class="hs-img" src="assets/pic/TOP/top-man.png" alt="ワンバランスボクシングジム 男性会員のパンチ" loading="lazy"><img class="hs-img" src="assets/pic/TOP/top.png" alt="ワンバランスボクシングジム 女性会員のミット打ち" loading="lazy"><img class="hs-img" src="assets/pic/TOP/top-man.png" alt="ワンバランスボクシングジム 男性会員のパンチ" loading="lazy"><img class="hs-img" src="assets/pic/TOP/top-gym.png" alt="ワンバランスボクシングジムのリングと練習スペース" loading="lazy"></h1> <img class="no-player" src="assets/pic/TOP/no-player.png" alt="あえて選手育成しないボクシングジム。">
+<section id="top-main" class="top-main"> <img class="catchphrase" src="assets/pic/TOP/fitness-boxing-gym.png" alt="米子市のフィットネスボクシングジム"><h1 class="hero-slider" id="heroSlider"><div class="hs-track" id="heroTrack"><div class="hs-slide"><img src="assets/pic/TOP/top.png" alt="米子市のボクシングジム ワンバランスボクシングジム 女性会員のミット打ち"></div><div class="hs-slide"><img src="assets/pic/TOP/top-man.png" alt="ワンバランスボクシングジム 男性会員のパンチ"></div><div class="hs-slide"><img src="assets/pic/TOP/top.png" alt="ワンバランスボクシングジム 女性会員のミット打ち"></div><div class="hs-slide"><img src="assets/pic/TOP/top-man.png" alt="ワンバランスボクシングジム 男性会員のパンチ"></div><div class="hs-slide"><img src="assets/pic/TOP/top-gym.png" alt="ワンバランスボクシングジムのリングと練習スペース"></div><div class="hs-slide"><img src="assets/pic/TOP/top.png" alt=""></div></div></h1> <img class="no-player" src="assets/pic/TOP/no-player.png" alt="あえて選手育成しないボクシングジム。">
   <p >ワンバランスは<br>
     選手育成を目的とせず、<br>
     &#12302;ボクシングやってみたかった&#12303;を<br>
@@ -158,9 +165,13 @@
   </div>
 </fotter>
 <script>
-(function(){var w=document.getElementById('heroSlider');if(!w)return;var a=w.querySelectorAll('.hs-img'),i=0;
+/* トップ写真：4秒に1回、右から左へスライド（最後まで行ったら最初に戻って繰り返す） */
+(function(){var t=document.getElementById('heroTrack');if(!t)return;
+var n=t.children.length-1,i=0,busy=false;
 if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-setInterval(function(){a[i].classList.remove('on');i=(i+1)%a.length;a[i].classList.add('on');},3500);})();
+function go(){if(busy)return;busy=true;i++;t.style.transition='transform 0.7s ease';t.style.transform='translateX(-'+(i*100)+'%)';}
+t.addEventListener('transitionend',function(){busy=false;if(i>=n){i=0;t.style.transition='none';t.style.transform='translateX(0)';}});
+setInterval(go,4000);})();
 </script>
 <script src="assets/js/header.js"></script>
 </body>
