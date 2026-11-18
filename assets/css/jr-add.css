@@ -2,3 +2,18 @@
 /* ジュニア追加(2026/11/18)：スクロールしてもヘッダー(3本線・ロゴ・体験ボタン)が上に付いてくる／メニュー項目が1つ増えた分の高さ */
 .header{position:-webkit-sticky;position:sticky;top:0;z-index:1000}
 nav .header-nav{height:575px}
+
+/* フッターのメニュー枠：項目が増えても枠が自動で伸びる（ブログ・パーソナル等が追加されても文字が枠から出ない）(2026/11/18) */
+fotter{display:block;container-type:inline-size}
+.fotter-box1{
+  --u:6.667cqw;
+  box-sizing:border-box;
+  padding:var(--u) var(--u) calc(var(--u) + 4px) var(--u);
+  background:
+    linear-gradient(#fff,#fff) var(--u) var(--u) / calc(100% - var(--u)*2) calc(100% - var(--u)*2) no-repeat,
+    linear-gradient(#FF424E,#FF424E) 0 0 / calc(100% - var(--u)) var(--u) no-repeat,
+    linear-gradient(#FF424E,#FF424E) 0 0 / var(--u) 100% no-repeat,
+    #5AD0E8;
+}
+.fotter-box1 > img.fotter{display:none}
+.fotter-box1 .fotter-box2{position:relative!important;top:auto!important;left:auto!important;margin:0;padding:6px 0 10px;list-style:none}
