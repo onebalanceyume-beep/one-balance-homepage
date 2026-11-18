@@ -15,7 +15,7 @@
 :root{--r:#ff424e;--c:#5ad0e8;--cream:#f4efdb;--ink:#333}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Rii,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
-img{display:block;max-width:100%}
+img{display:block;max-width:100%;height:auto}
 header{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;background:#fff}
 .hb{width:32px}.hb i{display:block;height:6px;margin:4px 0}.hb i:nth-child(1){background:var(--c)}.hb i:nth-child(2){background:var(--cream)}.hb i:nth-child(3){background:var(--r)}
 .logo{height:46px}
@@ -58,8 +58,11 @@ h2 i{font-style:normal;color:var(--c)}
 .price .v{font-size:56px;line-height:1.1;color:var(--r)}.price .v small{font-size:20px;color:#555}
 .pnote{font-size:13px;color:#666;margin-top:12px;line-height:1.8}
 .bring{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;margin-top:12px}
-.bring .c img{width:100%;height:100%;object-fit:contain}.bring .c{padding:10%;aspect-ratio:1;border-radius:50%;border:4px solid var(--r);background:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;color:#999}
-.bring div:nth-child(even) .c{border-color:var(--c)}
+.bring .c{position:relative;width:100%}
+.bring .c:before{content:"";display:block;padding-top:100%}
+.bring .c:after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;border:4px solid var(--r);border-radius:50%;background:#fff;z-index:0}
+.bring div:nth-child(even) .c:after{border-color:var(--c)}
+.bring .c img{position:absolute;left:15%;top:15%;width:70%;height:70%;object-fit:contain;z-index:1}
 .bring b{font-weight:400;font-size:15px;display:block;margin-top:4px}
 .faq .card{margin-bottom:12px;padding:12px 16px}
 .faq h3{font-size:17px;font-weight:400;display:flex;gap:10px;align-items:center;color:#333}
@@ -106,7 +109,7 @@ header a{text-decoration:none;color:inherit}
 <section class="cr" style="margin-top:34px"><span class="tag">CLASS</span><h2>クラスのこと</h2>
 <div class="card tbl" style="padding:8px 18px">
 <dl><dt>対象</dt><dd>小学1〜6年生</dd></dl><dl><dt>日時</dt><dd>毎週土曜 16:30〜（60〜90分ほど）</dd></dl><dl><dt>コース</dt><dd>ボクシングコース</dd></dl><dl><dt>場所</dt><dd>ワンバランスボクシングジム</dd></dl><dl><dt>体験</dt><dd>¥1,100（当日に現金で）</dd></dl></div>
-<div class="note">スパーリングはしません。あんしんして通えます。</div><div style="height:30px"></div></section>
+<div class="note">スパーリングはしません。<br>安心して通えます。</div><div style="height:30px"></div></section>
 <section><span class="tag c">PRICE</span><h2>月会費<span style="font-size:14px;color:#666">（税こみ）</span></h2>
 <div class="card c price"><div style="font-size:15px;color:#666">週1回・毎週土曜 16:30〜</div><div class="v">4,620<small>円 / 月</small></div></div>
 <p class="pnote">※入会金 8,800円（いっしょ入会割引あり）<br>※毎月10日しめ。入会月は日割り計算します。</p></section>
