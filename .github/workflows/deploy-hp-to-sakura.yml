@@ -43,6 +43,7 @@ on:
       - "assets/pic/TOP/personal-boxing-banner.png"
       - "assets/pic/TOP/personal-boxing-banner.webp"
       - "assets/pic/TOP/personal-boxing-banner-s.webp"
+      - "assets/pic/**/*.webp"
       - ".github/workflows/deploy-hp-to-sakura.yml"
   workflow_dispatch:
     inputs:
@@ -68,6 +69,8 @@ jobs:
             if [ -f "$f" ]; then cp "$f" "_deploy/$f"; fi
           done
           if [ -d kids ]; then cp -r kids _deploy/kids; fi
+          # 軽量化したWebP画像（2026/11/19）を全部送る
+          find assets/pic -name '*.webp' -exec cp --parents {} _deploy/ \;
           ls -R _deploy
 
       - name: さくらへアップロード（FTPS）
