@@ -77,7 +77,7 @@
 <style>
 /* トップ：男性→女性がふんわり出て、最後にキャッチが出る（1回だけ再生して最後の状態で止まる） */
 /* トップ：キャッチ文字＋写真（男性→女性にふわっと切り替わる。1回だけ再生） */
-.hf-copy{display:block;width:86%;max-width:560px;height:auto;margin:20px auto 14px;opacity:0;animation:hfIn 1.6s .2s ease-in-out forwards}
+.hf-copy{display:block;width:70%;max-width:420px;height:auto;margin:20px auto 14px;opacity:0;animation:hfIn 1.6s .2s ease-in-out forwards}
 .hf-frame{margin:0 2%;padding:7px;border:6px dotted #6ccbe3;border-radius:34px;box-sizing:border-box}
 .hero-fade{position:relative;width:100%;aspect-ratio:3/2;overflow:hidden;border-radius:26px;background:#f4efdb}
 .hero-fade img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;max-width:none;opacity:0;animation:hfIn 1.8s .2s ease-in-out forwards}
@@ -88,7 +88,7 @@
 </style>
 <style>
 @font-face{font-family:"NameFont";src:url("assets/fonts/MochiyName.woff2?v=20261118") format("woff2");font-display:swap}
-@font-face{font-family:"RiiFix";src:local("Hiragino Maru Gothic ProN"),local("HiraMaruProN-W4"),local("Yuanti SC"),local("Noto Sans CJK JP"),local("Noto Sans JP"),local("Yu Gothic");unicode-range:U+5BE7,U+6311,U+63F4,U+6B53,U+6EA2,U+74B0,U+790E,U+7DBA,U+7DD2,U+8F1D,U+8FCE,U+9E97,U+5100,U+5C3E,U+5F18}
+@font-face{font-family:"RiiFix";src:local("Hiragino Maru Gothic ProN"),local("HiraMaruProN-W4"),local("Yuanti SC"),local("Noto Sans CJK JP"),local("Noto Sans JP"),local("Yu Gothic");size-adjust:94%;unicode-range:U+5BE7,U+6311,U+63F4,U+6B53,U+6EA2,U+74B0,U+790E,U+7DBA,U+7DD2,U+8F1D,U+8FCE,U+9E97,U+5100,U+5C3E,U+5F18}
 @font-face{font-family:"RiiCookie";src:url("assets/fonts/RiiCookieRt.otf?v=20261117") format("opentype");font-display:swap}
 /* YouTube最新動画 */
 .yt-sec{background:#ff424e;padding:44px 0 48px;margin-top:0;font-family:"RiiFix","RiiCookie","Noto Sans JP",sans-serif}
@@ -115,6 +115,7 @@
 .msg-rb{font-size:2.5rem;line-height:1.5;color:#333}
 .msg-rb b{font-weight:400;color:#ff424e}.msg-rb i{font-style:normal;color:#5ad0e8}
 .msg-ex{margin-top:16px;text-align:left}
+.fx{font-family:"RiiFix","Hiragino Maru Gothic ProN","Noto Sans JP",sans-serif;font-weight:700;-webkit-text-stroke:.5px currentColor}
 .msg-row{display:flex;gap:10px;margin-top:12px;align-items:flex-start}
 .msg-n{flex:0 0 30px;height:30px;border-radius:50%;background:#ff424e;color:#fff;font-size:1.5rem;line-height:30px;text-align:center}
 .msg-n.c{background:#5ad0e8}
@@ -167,16 +168,16 @@
     ほとんどの方が初心者で、<br>
     大人になって始められた方ばかりです。<br>
     会員さん同士も仲がよく、<br>
-    笑顔溢れるアットホームな環境で<br>
+    笑顔<span class="fx">溢</span>れるアットホームな<span class="fx">環</span>境で<br>
     楽しみながら続けることができます。<br>
     運動が久しぶりの方も<br>
     運動に自信がない方も<br>
     安心して来ていただけるよう<br>
-    丁寧なサポートを心がけています。<br>
+    丁<span class="fx">寧</span>なサポートを心がけています。<br>
     <br>
-    基礎体力をつけたい方<br>
+    基<span class="fx">礎</span>体力をつけたい方<br>
     自信をつけたい方<br>
-    綺麗な筋肉をつけたい方<br>
+    <span class="fx">綺</span><span class="fx">麗</span>な筋肉をつけたい方<br>
     ストレス発散したい方<br>
     <br>
     ぜひ一度体験してみて下さい。</p>
@@ -205,9 +206,9 @@
 <div class="msg-rinen"><span class="msg-tag">理念</span>
 <div class="msg-rb"><b>心と体を元気に。</b><br><i>カッコよく素敵に。</i></div>
 <div class="msg-ex">
-<div class="msg-row"><div class="msg-n">1</div><div><div class="msg-vt">心と体を元気に。</div><div class="msg-vp">心と体が元気であることは、何かに挑戦したり、新しい一歩をふみ出すための土台です。<br>ボクシングを通して、心も体も健康に。毎日を元気に、自分らしく過ごせるように。</div></div></div>
-<div class="msg-row"><div class="msg-n c">2</div><div><div class="msg-vt">カッコよく素敵に。</div><div class="msg-vp">元気になったその先は、自分が「カッコいい」「素敵だな」と思える自分へ。<br>外見だけでなく、内面も。自分らしく輝き、今よりもっと自分を好きになれるように。</div></div></div>
-<div class="msg-row"><div class="msg-n">3</div><div><div class="msg-vt">ボクシングを通して、自己実現へ。</div><div class="msg-vp">私たちは、ボクシングを通して心と体を元気にし、その先にある一人ひとりの自己実現を応援します。<br>自分が目指す自分へ。ワンバランスは、その一歩を一緒に歩んでいきます。</div></div></div>
+<div class="msg-row"><div class="msg-n">1</div><div><div class="msg-vt">心と体を元気に。</div><div class="msg-vp">心と体が元気であることは、何かに<span class="fx">挑</span>戦したり、新しい一歩をふみ出すための土台です。<br>ボクシングを通して、心も体も健康に。毎日を元気に、自分らしく過ごせるように。</div></div></div>
+<div class="msg-row"><div class="msg-n c">2</div><div><div class="msg-vt">カッコよく素敵に。</div><div class="msg-vp">元気になったその先は、自分が「カッコいい」「素敵だな」と思える自分へ。<br>外見だけでなく、内面も。自分らしく<span class="fx">輝</span>き、今よりもっと自分を好きになれるように。</div></div></div>
+<div class="msg-row"><div class="msg-n">3</div><div><div class="msg-vt">ボクシングを通して、自己実現へ。</div><div class="msg-vp">私たちは、ボクシングを通して心と体を元気にし、その先にある一人ひとりの自己実現を応<span class="fx">援</span>します。<br>自分が目指す自分へ。ワンバランスは、その一歩を一<span class="fx">緒</span>に歩んでいきます。</div></div></div>
 </div></div>
 <div class="msg-card"><span class="msg-tag c">VISION</span><div class="msg-t">日本一！始めやすい<br>ボクシングジム</div><div class="msg-p">鳥取県から日本一へ。<br>初めてでも運動が久しぶりでも、<br>ボクシングの最初の一歩を、<br>ふみ出せる場所をつくります。</div></div>
 <div class="msg-card"><span class="msg-tag">MISSION</span><div class="msg-t">ボクシング革命</div><div class="msg-p">「ボクシングは、きつい・つらい」を<br>「楽しい」に変える。<br>ボクシングの常識を変えていきます。</div></div>
