@@ -88,8 +88,10 @@
 .hero-fade .hf-man .hf-fg{object-position:24% center;animation-delay:.2s}
 .hero-fade .hf-woman .hf-fg{object-position:50% center;animation-delay:5.2s}
 .hero-fade .hf-shade{position:absolute;left:0;right:0;bottom:0;height:60%;background:linear-gradient(to top,rgba(0,0,0,.62),rgba(0,0,0,0));opacity:0;animation:hfIn 2s 1s forwards}
-.hero-fade .hf-text{position:absolute;left:0;right:0;bottom:9%;margin:0;padding:0 16px;text-align:center;color:#fff;font-family:"Noto Serif JP","游明朝","Yu Mincho","Hiragino Mincho ProN","Hiragino Mincho Pro",serif;font-weight:500;font-size:3.4rem;line-height:1.5;letter-spacing:3px;opacity:0;transform:translateY(10px);animation:hfText 3s 1.4s forwards;text-shadow:0 2px 10px rgba(0,0,0,.45)}
+.hero-fade .hf-text{position:absolute;left:0;right:0;bottom:21%;margin:0;padding:0 16px;text-align:center;color:#fff;font-family:"Noto Serif JP","游明朝","Yu Mincho","Hiragino Mincho ProN","Hiragino Mincho Pro",serif;font-weight:500;font-size:3.4rem;line-height:1.5;letter-spacing:3px;opacity:0;transform:translateY(10px);animation:hfText 3s 1.4s forwards;text-shadow:0 2px 10px rgba(0,0,0,.45)}
 .hero-fade .hf-text b{font-weight:500;color:#fff;display:inline-block;margin-bottom:6px}
+.hero-fade .hf-cta{position:absolute;left:50%;bottom:5%;width:min(78%,300px);box-sizing:border-box;text-align:center;background:#ff424e;color:#fff;font-family:"Noto Serif JP","游明朝","Yu Mincho","Hiragino Mincho ProN","Hiragino Mincho Pro",serif;font-weight:500;font-size:1.8rem;letter-spacing:3px;padding:14px 0;border-radius:40px;text-decoration:none;opacity:0;transform:translate(-50%,10px);animation:hfCta 1.6s 5s forwards;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+@keyframes hfCta{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}
 @keyframes hfIn{from{opacity:0}to{opacity:1}}
 @keyframes hfZoom{from{transform:scale(1.05)}to{transform:scale(1)}}
 @keyframes hfText{from{opacity:0;transform:translateY(10px);filter:blur(8px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
@@ -98,8 +100,9 @@
 .hero-fade .hf-bg{display:block}
 .hero-fade .hf-fg{top:19%;height:62%;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 14%,#000 86%,transparent)}
 .hero-fade .hf-woman .hf-fg{top:26%;height:48%}
-.hero-fade .hf-text{font-size:min(7.6vw,3.4rem);bottom:10%}}
-@media (prefers-reduced-motion:reduce){.hero-fade .hf-layer,.hero-fade .hf-fg,.hero-fade .hf-shade,.hero-fade .hf-text{animation:none!important;transform:none!important}.hero-fade .hf-man{opacity:0}.hero-fade .hf-woman,.hero-fade .hf-shade,.hero-fade .hf-text{opacity:1}}
+.hero-fade .hf-text{font-size:min(7.6vw,3.4rem);bottom:17%}
+.hero-fade .hf-cta{bottom:4%}}
+@media (prefers-reduced-motion:reduce){.hero-fade .hf-layer,.hero-fade .hf-fg,.hero-fade .hf-shade,.hero-fade .hf-text,.hero-fade .hf-cta{animation:none!important;transform:none!important}.hero-fade .hf-man{opacity:0}.hero-fade .hf-woman,.hero-fade .hf-shade,.hero-fade .hf-text,.hero-fade .hf-cta{opacity:1}}
 </style>
 <style>
 @font-face{font-family:"NameFont";src:url("assets/fonts/MochiyName.woff2?v=20261118") format("woff2");font-display:swap}
@@ -169,7 +172,7 @@
     </div>
   </nav>
 </header>
-<section id="top-main" class="top-main"> <div class="hero-fade" id="heroFade"><h1 class="sr-only">米子市のボクシングジム ワンバランスボクシングジム</h1><div class="hf-layer hf-man"><img class="hf-bg" src="assets/pic/TOP/hero-man2.webp?v=20261126" alt="" aria-hidden="true"><img class="hf-fg" src="assets/pic/TOP/hero-man2.webp?v=20261126" alt="ワンバランスボクシングジム 男性会員のパンチ" width="1500" height="999" fetchpriority="high"></div><div class="hf-layer hf-woman"><img class="hf-bg" src="assets/pic/TOP/hero-woman2.webp?v=20261126" alt="" aria-hidden="true"><img class="hf-fg" src="assets/pic/TOP/hero-woman2.webp?v=20261126" alt="ワンバランスボクシングジム 女性会員のミット打ち" width="1600" height="1066"></div><div class="hf-shade"></div><p class="hf-text"><b>カッコいいじぶんを</b><br>迎えにいこう</p></div> <img class="catchphrase" src="assets/pic/TOP/fitness-boxing-gym.webp" alt="米子市のフィットネスボクシングジム"> <img class="no-player" src="assets/pic/TOP/no-player.png" alt="あえて選手育成しないボクシングジム。">
+<section id="top-main" class="top-main"> <div class="hero-fade" id="heroFade"><h1 class="sr-only">米子市のボクシングジム ワンバランスボクシングジム</h1><div class="hf-layer hf-man"><img class="hf-bg" src="assets/pic/TOP/hero-man2.webp?v=20261126" alt="" aria-hidden="true"><img class="hf-fg" src="assets/pic/TOP/hero-man2.webp?v=20261126" alt="ワンバランスボクシングジム 男性会員のパンチ" width="1500" height="999" fetchpriority="high"></div><div class="hf-layer hf-woman"><img class="hf-bg" src="assets/pic/TOP/hero-woman2.webp?v=20261126" alt="" aria-hidden="true"><img class="hf-fg" src="assets/pic/TOP/hero-woman2.webp?v=20261126" alt="ワンバランスボクシングジム 女性会員のミット打ち" width="1600" height="1066"></div><div class="hf-shade"></div><p class="hf-text"><b>カッコいいじぶんを</b><br>迎えにいこう</p><a class="hf-cta" href="https://onebalanceyume-beep.github.io/onebalance-member/onebalance-v9.html?menu=boxing">体験予約する　›</a></div> <img class="catchphrase" src="assets/pic/TOP/fitness-boxing-gym.webp" alt="米子市のフィットネスボクシングジム"> <img class="no-player" src="assets/pic/TOP/no-player.png" alt="あえて選手育成しないボクシングジム。">
   <p >ワンバランスは<br>
     選手育成を目的とせず、<br>
     &#12302;ボクシングやってみたかった&#12303;を<br>
