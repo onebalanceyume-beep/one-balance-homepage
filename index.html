@@ -77,11 +77,20 @@
 }
 </script>
 <style>
-/* トップ写真スライド：右から左へ流れる（古いCSSキャッシュが残っていても崩れないようここに書く） */
-.hero-slider{position:relative;width:100%;aspect-ratio:681/459;margin:0;overflow:hidden}
-.hero-slider .hs-track{display:flex;width:100%;height:100%;will-change:transform}
-.hero-slider .hs-slide{flex:0 0 100%;width:100%;height:100%}
-.hero-slider .hs-slide img{display:block;width:100%;height:100%;object-fit:cover}
+/* トップ：男性→女性がふんわり出て、最後にキャッチが出る（1回だけ再生して最後の状態で止まる） */
+.hero-fade{position:relative;width:100%;aspect-ratio:681/459;overflow:hidden;background:#f4efdb}
+.hero-fade .hf-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation-fill-mode:forwards;animation-timing-function:ease-in-out}
+.hero-fade .hf-man{object-position:4% center;animation:hfIn 1.8s .2s forwards,hfZoom 9s .2s ease-out forwards}
+.hero-fade .hf-woman{object-position:10% center;animation:hfIn 2s 4.6s forwards,hfZoom 8s 4.6s ease-out forwards}
+.hero-fade .hf-shade{position:absolute;left:0;right:0;bottom:0;height:60%;background:linear-gradient(to top,rgba(0,0,0,.62),rgba(0,0,0,0));opacity:0;animation:hfIn 1.6s 7.2s forwards}
+.hero-fade .hf-text{position:absolute;left:0;right:0;bottom:9%;margin:0;padding:0 16px;text-align:center;color:#fff;font-family:"Hiragino Maru Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo","Noto Sans JP",sans-serif;font-weight:800;font-size:3.6rem;line-height:1.35;letter-spacing:2px;opacity:0;transform:translateY(14px);animation:hfText 1.8s 7.4s forwards;-webkit-text-stroke:0;text-shadow:0 2px 10px rgba(0,0,0,.45)}
+.hero-fade .hf-text b{font-weight:800;color:#fff;background:#ff424e;border-radius:12px;padding:0 10px;display:inline-block;margin-bottom:6px}
+@keyframes hfIn{from{opacity:0}to{opacity:1}}
+@keyframes hfZoom{from{transform:scale(1.07)}to{transform:scale(1)}}
+@keyframes hfText{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (max-width:640px){.hero-fade{aspect-ratio:auto;height:calc(100vh - 100px);height:calc(100svh - 100px);min-height:420px}.hero-fade .hf-text{font-size:min(8.6vw,3.8rem);bottom:12%}}
+@media (prefers-reduced-motion:reduce){.hero-fade .hf-img,.hero-fade .hf-shade,.hero-fade .hf-text{animation:none!important;transform:none!important}.hero-fade .hf-man{opacity:0}.hero-fade .hf-woman,.hero-fade .hf-shade,.hero-fade .hf-text{opacity:1}}
 </style>
 <style>
 @font-face{font-family:"NameFont";src:url("assets/fonts/MochiyName.woff2?v=20261118") format("woff2");font-display:swap}
@@ -151,7 +160,7 @@
     </div>
   </nav>
 </header>
-<section id="top-main" class="top-main"> <img class="catchphrase" src="assets/pic/TOP/fitness-boxing-gym.webp" alt="米子市のフィットネスボクシングジム"><h1 class="hero-slider" id="heroSlider"><div class="hs-track" id="heroTrack"><div class="hs-slide"><img src="assets/pic/TOP/top.webp?v=20261118b" alt="米子市のボクシングジム ワンバランスボクシングジム 女性会員のミット打ち"></div><div class="hs-slide"><img src="assets/pic/TOP/top-man.webp?v=20261118b" alt="ワンバランスボクシングジム 男性会員のパンチ"></div><div class="hs-slide"><img src="assets/pic/TOP/top-3a.webp?v=20261118b" alt="ワンバランスボクシングジム 会員さんとトレーナーのレッスン風景"></div><div class="hs-slide"><img src="assets/pic/TOP/top-3b.webp?v=20261118b" alt="ワンバランスボクシングジム 会員さんとトレーナーのシャドーボクシング"></div><div class="hs-slide"><img src="assets/pic/TOP/top.webp?v=20261118b" alt=""></div></div></h1> <img class="no-player" src="assets/pic/TOP/no-player.png" alt="あえて選手育成しないボクシングジム。">
+<section id="top-main" class="top-main"> <div class="hero-fade" id="heroFade"><h1 class="sr-only">米子市のボクシングジム ワンバランスボクシングジム</h1><img class="hf-img hf-man" src="assets/pic/TOP/hero-man.webp?v=20261126" alt="ワンバランスボクシングジム 男性会員のパンチ" width="1150" height="764" fetchpriority="high"><img class="hf-img hf-woman" src="assets/pic/TOP/hero-woman.webp?v=20261126" alt="ワンバランスボクシングジム 女性会員のミット打ち" width="1088" height="714"><div class="hf-shade"></div><p class="hf-text"><b>カッコいい自分を</b><br>迎えにいこう</p></div> <img class="catchphrase" src="assets/pic/TOP/fitness-boxing-gym.webp" alt="米子市のフィットネスボクシングジム"> <img class="no-player" src="assets/pic/TOP/no-player.png" alt="あえて選手育成しないボクシングジム。">
   <p >ワンバランスは<br>
     選手育成を目的とせず、<br>
     &#12302;ボクシングやってみたかった&#12303;を<br>
@@ -231,15 +240,6 @@
     </ul>
   </div>
 </fotter>
-<script>
-/* トップ写真：3秒に1回、右から左へスライド（最後まで行ったら最初に戻って繰り返す） */
-(function(){var t=document.getElementById('heroTrack');if(!t)return;
-var n=t.children.length-1,i=0,busy=false;
-if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-function go(){if(busy)return;busy=true;i++;t.style.transition='transform 0.7s ease';t.style.transform='translateX(-'+(i*100)+'%)';}
-t.addEventListener('transitionend',function(){busy=false;if(i>=n){i=0;t.style.transition='none';t.style.transform='translateX(0)';}});
-setInterval(go,3000);})();
-</script>
 <script src="assets/js/header.js"></script>
 </body>
 </html>
